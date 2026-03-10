@@ -222,4 +222,3 @@ Current evidence shows:
 - competitive recurrent models (LSTM, CNN-LSTM),
 - a Transformer path that is functional but requires further tuning and broader real-data evaluation.
 
-As a portfolio/research artifact, the project is now suitable for MSc/PhD applications, with clear next steps toward publication-grade experimentation.
