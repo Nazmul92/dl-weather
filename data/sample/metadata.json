@@ -1,0 +1,16 @@
+{
+  "description": "Synthetic gridded weather dataset for validating the forecasting pipeline.",
+  "shape": [
+    180,
+    5,
+    32,
+    64
+  ],
+  "channels": [
+    "temperature",
+    "pressure",
+    "u_wind",
+    "v_wind",
+    "precipitation"
+  ]
+}

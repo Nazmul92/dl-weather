@@ -1,0 +1,42 @@
+seed: 42
+device: "cpu"
+output_dir: "outputs_open_air"
+
+dataset:
+  kind: "era5_nc"
+  npz_path: "data/sample/synthetic_weather.npz"
+  train_ratio: 0.7
+  val_ratio: 0.15
+  era5:
+    path: "data/open/air_temperature.nc"
+    variables: ["air"]
+    time_dim: "time"
+    lat_dim: "lat"
+    lon_dim: "lon"
+    level: null
+
+data:
+  input_steps: 8
+  forecast_steps: 4
+  batch_size: 8
+  num_workers: 0
+
+model:
+  auto_shape: true
+  channels: 1
+  height: 25
+  width: 53
+  patch_size: 5
+  hidden_dim: 64
+  emb_dim: 64
+  num_heads: 4
+  num_layers: 2
+  dropout: 0.1
+
+train:
+  epochs: 3
+  learning_rate: 0.001
+  weight_decay: 0.0001
+
+inference:
+  mc_samples: 10

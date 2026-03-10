@@ -1,0 +1,41 @@
+seed: 42
+device: "cpu"
+output_dir: "outputs_proper"
+
+dataset:
+  kind: "npz"
+  npz_path: "data/sample/synthetic_weather.npz"
+  train_ratio: 0.7
+  val_ratio: 0.15
+  era5:
+    path: "data/era5/*.nc"
+    variables: ["t2m", "sp", "u10", "v10", "tp"]
+    time_dim: "time"
+    lat_dim: "latitude"
+    lon_dim: "longitude"
+    level: null
+
+data:
+  input_steps: 12
+  forecast_steps: 6
+  batch_size: 16
+  num_workers: 0
+
+model:
+  channels: 5
+  height: 32
+  width: 64
+  patch_size: 8
+  hidden_dim: 128
+  emb_dim: 96
+  num_heads: 4
+  num_layers: 2
+  dropout: 0.1
+
+train:
+  epochs: 12
+  learning_rate: 0.001
+  weight_decay: 0.0001
+
+inference:
+  mc_samples: 20
